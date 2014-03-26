@@ -1,7 +1,7 @@
-gelatin
-=======
+LoveClock
+==========
 
-## Gulp, Bower, Require, Express, Nodemon, Backbone
+## Gulp, Bower, Require, Express, Nodemon, Backbone, Mocha, Chai, JSLint, Q & more
 
 
 ```
@@ -12,4 +12,6 @@ npm install
 bower install
 
 gulp bower.migrate
+
+gulp server.autoreload
 ```
