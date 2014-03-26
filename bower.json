@@ -1,0 +1,30 @@
+{
+  "name": "gelatin",
+  "version": "0.0.1",
+  "authors": [
+    "James Womack <james.womack@am.sony.com>"
+  ],
+  "description": "Backbone View Mixer",
+  "main": "public/index.js",
+  "keywords": [
+    "backbone",
+    "mixin",
+    "mixins",
+    "extend",
+    "gelatin"
+  ],
+  "license": "ISC",
+  "homepage": "http://nblgstr.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "backbone": "~1.1.2",
+    "requirejs": "~2.1.11",
+    "jquery": "~2.1.0"
+  }
+}

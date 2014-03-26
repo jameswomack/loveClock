@@ -1,0 +1,42 @@
+{
+  "name": "gelatin",
+  "version": "0.0.1",
+  "description": "Gulp Example",
+  "main": "index.js",
+  "devDependencies": {
+    "gulp": "~3.5.6",
+    "gulp-uglify": "~0.2.1",
+    "gulp-util": "~2.2.14",
+    "gulp-bower-files": "~0.1.12",
+    "q": "~1.0.1",
+    "q-io": "~1.11.0",
+    "colors": "~0.6.2",
+    "fs.extra": "~1.2.1",
+    "gulp-nodemon": "~1.0.2",
+    "gulp-stylus": "~0.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://ghe.am.sony.com/James-Womack/gelatin.git"
+  },
+  "keywords": [
+    "gulp",
+    "gelatin"
+  ],
+  "author": "James J. Womack",
+  "license": "ISC",
+  "dependencies": {
+    "express": "~3.4.8",
+    "proxy-out": "0.0.6",
+    "request": "~2.34.0",
+    "moment-timezone": "0.0.3",
+    "handlebars": "~2.0.0-alpha.2",
+    "i": "~0.3.2",
+    "express3-handlebars": "~0.5.0",
+    "hbs": "~2.5.0",
+    "lru-cache": "~2.5.0"
+  }
+}
