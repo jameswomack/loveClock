@@ -9,7 +9,7 @@ define('view', ['backbone'], function(Backbone){
     },
     scrollIntoFocus: function(){
       var frame = this.frame();
-      window.scrollTo(frame.left, frame.top);
+      window.scrollTo(frame.left, frame.top + frame.height);
     },
     frame: function(){
       var clientRects = this.el.getClientRects();
