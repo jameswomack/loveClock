@@ -16,18 +16,19 @@
     "gulp-stylus": "~0.1.0",
     "gulp-mocha": "^0.4.1",
     "gulp-jshint": "^1.5.1",
-    "jshint-stylish": "^0.1.5"
+    "jshint-stylish": "^0.1.5",
+    "chai": "^1.9.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "gulp tests.run.all"
   },
   "repository": {
     "type": "git",
-    "url": "http://ghe.am.sony.com/James-Womack/gelatin.git"
+    "url": "https://github.com/jameswomack/loveClock.git"
   },
   "keywords": [
-    "gulp",
-    "gelatin"
+    "timezone",
+    "travel"
   ],
   "author": "James J. Womack",
   "license": "ISC",
