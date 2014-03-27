@@ -11,13 +11,19 @@ server.use(function(req, res){
 
 
 function main(req, res) {
+  var leftZone = req.params.leftZone;
+  var rightZone = req.params.rightZone;
+  var cacheKey = 'clock/' + leftZone + '/' + rightZone;
+
   var lcJSON = function(){
-    console.log('cache not used');
-    var loveClock = new LoveClock(i.titleize(req.params.leftZone), i.titleize(req.params.rightZone));
+    console.log('cache not used for ' + cacheKey);
+    
+    var loveClock = new LoveClock(i.titleize(leftZone), i.titleize(rightZone));
     return loveClock.toJSON();
   }
   
-  res.render('clock', server.lruCache.getSet('clock', lcJSON));
+  // TODO - allow for auto-magic caching in server lib
+  return res.render('clock', server.lruCache.getSet(cacheKey, lcJSON));
 };
 
 
