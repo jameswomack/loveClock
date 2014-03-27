@@ -13,7 +13,10 @@
     "colors": "~0.6.2",
     "fs.extra": "~1.2.1",
     "gulp-nodemon": "~1.0.2",
-    "gulp-stylus": "~0.1.0"
+    "gulp-stylus": "~0.1.0",
+    "gulp-mocha": "^0.4.1",
+    "gulp-jshint": "^1.5.1",
+    "jshint-stylish": "^0.1.5"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -30,7 +33,6 @@
   "license": "ISC",
   "dependencies": {
     "express": "~3.4.8",
-    "proxy-out": "0.0.6",
     "request": "~2.34.0",
     "moment-timezone": "0.0.3",
     "handlebars": "~2.0.0-alpha.2",
