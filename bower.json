@@ -1,5 +1,5 @@
 {
-  "name": "gelatin",
+  "name": "love",
   "version": "0.0.1",
   "authors": [
     "James Womack <james.womack@am.sony.com>"
@@ -11,7 +11,7 @@
     "mixin",
     "mixins",
     "extend",
-    "gelatin"
+    "love"
   ],
   "license": "ISC",
   "homepage": "http://nblgstr.com",
