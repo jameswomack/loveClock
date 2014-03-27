@@ -1,4 +1,12 @@
 {
+  "production": {
+    "port": 3333,
+    "start": "start love_clock_nblgstr",
+    "stop": "stop love_clock_nblgstr",
+    "upstartScriptPath": "/etc/init/love_clock_nblgstr.conf", 
+    "nginxSitePath": "/opt/nginx/conf/sites-available/love.nblgstr.com", 
+    "logPath": "/var/log/love_clock_nblgstr.log" 
+  },
   "port": 3000,
   "public": "public",
   "listening": "Listening on port ",
