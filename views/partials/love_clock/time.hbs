@@ -1,5 +1,6 @@
 {{#if current}}
-<li class="currentTime" id="current">{{this}}</li>
+{{#if left}}<li class="currentTime" id="current" data-sp-innerHTML="currentLeft">{{this}}</li>
+{{else}}<li class="currentTime" data-sp-innerHTML="currentRight">{{this}}</li>{{/if}}
 {{else}}
 <li>{{this}}</li>
 {{/if}}
