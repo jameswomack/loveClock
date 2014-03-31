@@ -1,45 +1,58 @@
-define('shadowplay', [], function (ClockView) {
+define('shadowplay', [], function () {
   function Shadowplay(selector, model) {
     this.selector = selector;
     this.model = {attributes: model};
     this.domMap = {};
     this.document = document.createDocumentFragment();
   }
-  
+
   Shadowplay.prototype.def = function (k, node) {
     this.domMap[k] = node;
-    
+
     var listener = this;
-    node.addEventListener('change', function () {
+
+    var isValueNode = typeof node.value === 'string';
+
+    var domToModelCB = function () {
       // Following line is unDRY perhaps
-      var textKey = typeof node.value == 'string' ? 'value' : 'innerHTML';
+      var textKey = isValueNode ? 'value' : 'innerHTML';
       listener.model.attributes[k] = node[textKey];
-    });    
-        
+    };
+
+    if(!isValueNode){
+      // Won't work on IE < 11
+      window.MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
+      var observer = new MutationObserver(domToModelCB);
+      // characterData, childList, attributes
+      observer.observe(node, {characterData: true, childList: true, attributes: true});
+    } else {
+      node.addEventListener('change', domToModelCB);
+    }
+
     Object.defineProperty(this.model, k, {
       get: function () {
         return this.attributes[k];
       },
       set: function (v) {
-        if (this.attributes[k] == v) {
+        if (this.attributes[k] === v) {
           return;
         }
         this.attributes[k] = v;
-        var textKey = typeof node.value == 'string' ? 'value' : 'innerHTML';
-        if (node[textKey] != v) {
+        var textKey = typeof node.value === 'string' ? 'value' : 'innerHTML';
+        if (node[textKey] !== v) {
           node[textKey] = v;
         }
       }
     });
   }
-  
+
   Shadowplay.prototype.add = function (node) {
     var deepClone = node.cloneNode(true);
     deepClone.donor = node;
     this.document.appendChild(deepClone);
-  } 
-  
-  
+  }
+
+
   Shadowplay.prototype.build = function () {
     var all = document.querySelectorAll(this.selector);
     var length = all.length;
@@ -54,7 +67,7 @@ define('shadowplay', [], function (ClockView) {
       }
     }
   }
-  
+
   var ShadowplayCache = function () {
     return {
       attributes: {},
@@ -82,7 +95,7 @@ define('shadowplay', [], function (ClockView) {
       }
     };
   }
-    
+
   return {
     create: function (selector, model) {
       var sp = new Shadowplay(selector, model);
