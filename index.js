@@ -25,7 +25,7 @@ function main(req, res) {
 
   // TODO - allow for auto-magic caching in server lib
   return res.render('clock', server.lruCache.getSet(cacheKey, lcJSON));
-};
+}
 
 
 server.listen();

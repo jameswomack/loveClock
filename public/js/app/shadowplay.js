@@ -59,7 +59,8 @@ define('shadowplay', [], function () {
     for (var i = 0; i < length; i++) {
       var item = all[i];
       var dataHtmlKey;
-      if ((dataHtmlKey = item.attributes['data-sp-innerHTML'].value)) {
+      var attributes = item.attributes;
+      if ((dataHtmlKey = attributes['data-sp-innerHTML'].value)) {
         this.domMap[dataHtmlKey] = item;
         var domValue = item.innerHTML;
         this.def(dataHtmlKey, item);
