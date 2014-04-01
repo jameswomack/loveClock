@@ -79,7 +79,7 @@ gulp.task('tests.run.all', function () {
 
 
 // Start auto-reloading server
-gulp.task('server.autoreload', function () {
+gulp.task('server.autoreload', ['bower.migrate'], function () {
   return nodemon({ script: 'index.js', ext: 'html hbs styl js' })
   .on('change', ['stylus.compile.all'])
   .on('restart', function () {
