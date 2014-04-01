@@ -1,7 +1,7 @@
 {
   "name": "love",
-  "version": "0.0.1",
-  "description": "Gulp Example",
+  "version": "0.0.2",
+  "description": "Time Zone Difference Monitor",
   "main": "index.js",
   "devDependencies": {
     "q": "~1.0.1",
