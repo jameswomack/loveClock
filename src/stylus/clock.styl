@@ -1,5 +1,6 @@
 inlineThis()
   display inline-block
+  box-sizing border-box
   width 25%
   @media only screen and (min-device-width : 320px) and (max-device-width : 568px)
     width 50%
@@ -18,6 +19,10 @@ body
 
 .timeZoneTitle, .timeZoneSubtitle
   inlineThis()
+
+.timeZoneSubtitle
+  font-size 90%
+
 
 .timeZoneHours
   defaultBorder()
