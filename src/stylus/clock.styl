@@ -15,7 +15,12 @@ body
   margin 0
   padding 0
   @media only screen and (min-device-width : 320px) and (max-device-width : 568px)
-    font-size 350%
+    font-size 340%
+
+header#header
+  position fixed
+  width 100%
+  background-color #fff
 
 .timeZoneTitle, .timeZoneSubtitle
   inlineThis()
@@ -26,6 +31,9 @@ body
 
 .timeZoneHours
   defaultBorder()
+  margin-top 11em
+  @media only screen and (min-device-width : 320px) and (max-device-width : 568px)
+    margin-top 9em
   box-sizing border-box
   padding 0px
   inlineThis()

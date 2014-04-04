@@ -21,7 +21,8 @@
     "chai": "^1.9.1"
   },
   "scripts": {
-    "test": "gulp tests.run.all"
+    "test": "gulp tests.run.all",
+    "start": "gulp server.autoreload"
   },
   "repository": {
     "type": "git",

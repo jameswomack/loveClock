@@ -1,6 +1,5 @@
 var server = require('./lib/serverCreator')();
 var LoveClock = require('./lib/loveClock');
-var i = require('i')();
 
 server.get('/clock/:leftZone/:rightZone', main);
 // TODO - create server with a routing table or controllers
@@ -19,7 +18,7 @@ function main(req, res) {
   var lcJSON = function(){
     console.log('cache not used for ' + cacheKey);
 
-    var loveClock = new LoveClock(i.titleize(leftZone), i.titleize(rightZone));
+    var loveClock = new LoveClock(leftZone, rightZone);
     return loveClock.toJSON();
   }
 
