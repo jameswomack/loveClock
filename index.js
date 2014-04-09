@@ -21,12 +21,9 @@ function main(req, res) {
   var cacheKey = 'clock/' + leftZone + '/' + rightZone + String(date.getHours()) + String(date.getMinutes());
 
   var lcJSON = function(){
-    console.log('cache not used for ' + cacheKey);
-
     var loveClock = LoveClock.create(leftZone, rightZone);
     var toJSON = loveClock.toJSON();
     toJSON.cities = [LoveClock.cities(leftZone), LoveClock.cities(rightZone)];
-    console.log(toJSON);
     return toJSON;
   }
 
