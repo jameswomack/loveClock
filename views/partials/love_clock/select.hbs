@@ -1,0 +1,11 @@
+<select class="timeZoneCities" rv-change="cityListChange">
+  {{#arry cities @index ~}}
+    {{#each this}}
+      {{#ifvalue @key ../../titles value=parentIndex ~}}
+        <option class="currentCity" value="{{timeZone}}" selected>{{@key}}</option>
+      {{else ~}}
+        <option class="currentCity" value="{{timeZone}}"         >{{@key}}</option>
+      {{~/ifvalue}}
+    {{/each}}
+  {{~/arry}}
+</select>

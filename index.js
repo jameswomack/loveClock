@@ -2,12 +2,17 @@ var server = require('./lib/serverCreator')();
 var LoveClock = require('./lib/loveClock');
 
 server.get('/clock/:leftZone/:rightZone', main);
+server.get('/select/:zone', select);
 // TODO - create server with a routing table or controllers
 // so passing a default route like this is easy
 server.use(function(req, res){
   res.redirect('/clock/tokyo/tijuana');
 });
 
+function select(req, res){
+  // TODO - add caching, add cache key building function
+  return res.render('select', {cities: LoveClock.cities(req.params.zone)});
+}
 
 function main(req, res) {
   var leftZone = req.params.leftZone;
@@ -18,8 +23,11 @@ function main(req, res) {
   var lcJSON = function(){
     console.log('cache not used for ' + cacheKey);
 
-    var loveClock = new LoveClock(leftZone, rightZone);
-    return loveClock.toJSON();
+    var loveClock = LoveClock.create(leftZone, rightZone);
+    var toJSON = loveClock.toJSON();
+    toJSON.cities = [LoveClock.cities(leftZone), LoveClock.cities(rightZone)];
+    console.log(toJSON);
+    return toJSON;
   }
 
   // TODO - allow for auto-magic caching in server lib

@@ -1,1 +1,9 @@
-<header id="header">{{~#each titles ~}}<h2 class="timeZoneTitle">{{~this~}}</h2>{{~/each~}}<br/>{{~#each dates ~}}<h3 class="timeZoneSubtitle">{{~this~}}</h2>{{~/each~}}</header>{{~#each times ~}}<ul class="timeZoneHours">{{#each this ~}}{{> love_clock/time ~}}{{~/each}}</ul>{{~/each}}
+<header id="header">
+  {{~#each titles ~}}
+    <h2 class="timeZoneTitle">
+      {{~this~}}
+      {{> love_clock/select ../this }}
+    </h2>
+  {{~/each~}}
+  <br/>
+{{~#each dates ~}}<h3 class="timeZoneSubtitle">{{~this~}}</h2>{{~/each~}}</header>{{~#each times ~}}<ul class="timeZoneHours">{{#each this ~}}{{> love_clock/time ~}}{{~/each}}</ul>{{~/each}}

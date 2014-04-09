@@ -8,9 +8,11 @@ inlineThis()
 defaultBorder()
   border 2px solid #000
 
+defaultFont()
+  font-family 'Avenir Next', Avenir, Futura, 'Century Gothic', Verdana, Helvetica, Arial, sans-serif
 
 body
-  font-family 'Avenir Next', Avenir, Futura, 'Century Gothic', Verdana, Helvetica, Arial, sans-serif
+  defaultFont()
   text-align center
   margin 0
   padding 0
@@ -21,6 +23,20 @@ header#header
   position fixed
   width 100%
   background-color #fff
+  h2
+    position relative
+
+header h2 select.timeZoneCities
+  position absolute
+  defaultFont()
+  font-weight bold
+  background transparent
+  border 0px transparent none
+  -webkit-appearance none
+  font-size 130%
+  top 0px
+  left 0px
+  background #fff
 
 .timeZoneTitle, .timeZoneSubtitle
   inlineThis()
