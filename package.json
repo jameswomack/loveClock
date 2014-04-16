@@ -18,7 +18,8 @@
     "gulp-mocha": "^0.4.1",
     "gulp-jshint": "^1.5.1",
     "jshint-stylish": "^0.1.5",
-    "chai": "^1.9.1"
+    "chai": "^1.9.1",
+    "nightwatch": "~0.4.13"
   },
   "scripts": {
     "test": "gulp tests.run.all",

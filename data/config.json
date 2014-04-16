@@ -1,4 +1,7 @@
 {
+  "testing": {
+    "port": 3335
+  },
   "production": {
     "port": 3333,
     "start": "start love_clock_nblgstr",
