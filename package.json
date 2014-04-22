@@ -19,7 +19,10 @@
     "gulp-jshint": "^1.5.1",
     "jshint-stylish": "^0.1.5",
     "chai": "^1.9.1",
-    "nightwatch": "~0.4.13"
+    "nightwatch": "~0.4.13",
+    "coveralls": "~2.10.0",
+    "istanbul": "~0.2.7",
+    "mocha": "~1.18.2"
   },
   "scripts": {
     "test": "gulp tests.run.all",

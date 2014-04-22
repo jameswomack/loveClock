@@ -1,4 +1,4 @@
-define('love', ['clockView','jquery', 'rivets', 'moment', 'backbone', 'picker'], function (ClockView, $, Rivets, moment, Backbone) {
+define('love', ['clockView','jquery', 'rivets', 'moment', 'backbone'], function (ClockView, $, Rivets, moment, Backbone) {
   return {
     start: function() {
       var model = this.model = null;

@@ -2,7 +2,6 @@ var server = require('../..');
 
 var port = server.httpListener.address().port;
 var url = 'http://localhost:'+String(port);
-console.log(url);
 
 module.exports = {
   'titles' : function(browser){
